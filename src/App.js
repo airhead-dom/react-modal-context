@@ -1,24 +1,16 @@
-import logo from './logo.svg';
+
+import createModalStore from "./components/createModalStore";
+import { ModalProvider } from './components/modalContext';
+import ContentPage from './components/ContentPage'
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ModalProvider value={createModalStore()}>
+      <div className="app">
+          <ContentPage />
+      </div>
+    </ModalProvider>
   );
 }
 
